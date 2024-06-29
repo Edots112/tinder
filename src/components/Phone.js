@@ -6,6 +6,7 @@ import Form from './Form';
 
 const Phone = () => {
 	const [currentStep, setCurrentStep] = useState('initial');
+	const [fade, setFade] = useState(false);
 
 	useEffect(() => {
 		const tinderIcon = document.querySelector(".move");
@@ -15,13 +16,23 @@ const Phone = () => {
 		const openApp = () => {
 			whiteScreen.classList.add("active");
 			setTimeout(() => {
-				setCurrentStep('welcome');
-			}, 3000); // Show the welcome page after 3 seconds
+				setFade(true);
+				setTimeout(() => {
+					setCurrentStep('welcome');
+					setFade(false);
+				}, 500);
+			}, 3000);
 		};
 
 		const closeApp = () => {
 			whiteScreen.classList.remove("active");
-			setCurrentStep('initial');
+			setTimeout(() => {
+				setFade(true);
+				setTimeout(() => {
+					setCurrentStep('initial');
+					setFade(false);
+				}, 500);
+			}, 500);
 		};
 
 		tinderIcon.addEventListener("click", openApp);
@@ -33,7 +44,15 @@ const Phone = () => {
 		};
 	}, []);
 
-	
+	const changeCurrentState = (state) => {
+		setTimeout(() => {
+			setFade(true);
+			setTimeout(() => {
+				setCurrentStep(state);
+				setFade(false);
+			}, 250);
+		}, 250);
+	}
 
 	return (
 		<div className="center">
@@ -58,10 +77,12 @@ const Phone = () => {
 				<div className="close">
 					<div style={{ position: 'relative', left: '5px' }}>&times;</div>
 				</div>
-				{currentStep === 'initial' && <Loading/>}
-				{currentStep === 'swipper' && <Swipper setCurrentStep={setCurrentStep} />}
-				{currentStep === 'welcome' && <Welcome setCurrentStep={setCurrentStep}/>}
-				{currentStep === 'form' && <Form setCurrentStep={setCurrentStep}/>}
+				<div className={`fade ${fade ? 'fade-out' : ''}`}>
+					{currentStep === 'initial' && <Loading />}
+					{currentStep === 'swipper' && <Swipper setCurrentStep={changeCurrentState} />}
+					{currentStep === 'welcome' && <Welcome setCurrentStep={changeCurrentState} />}
+					{currentStep === 'form' && <Form setCurrentStep={changeCurrentState} />}
+				</div>
 			</div>
 		</div>
 	);
