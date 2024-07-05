@@ -28,8 +28,13 @@
   align-items: center;
 }
 
-.app {
-  overflow: hidden;
+.app{
+	overflow: hidden;
+	min-width: 300px;
+}
+
+.center {
+  transform: scale(1.2);
 }
 
 .app > div {
