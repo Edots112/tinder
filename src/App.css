@@ -1,3 +1,4 @@
+
 #root {
   text-align: center;
   display: flex;
@@ -34,7 +35,7 @@
 }
 
 .center {
-  transform: scale(1.2);
+  transform: scale(1);
 }
 
 .app > div {
@@ -187,32 +188,32 @@ body {
 
 .move {
   position: absolute;
-  bottom: 160px;
-  left: 33px;
+  bottom: 300px;
+  left: 55px;
 
   max-width: fit-content;
 
   img {
-    width: 35px;
+    width: 55px;
     border-radius: 10px;
   }
 
   p {
-    color: black;
+    color: rgb(255, 255, 255);
     margin: 0 0 0 3px;
     padding: 0;
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 .x-div {
   position: absolute;
-  bottom: 100px;
-  left: 82px;
+  bottom: 300px;
+  left: 130px;
 
   max-width: fit-content;
 
   img {
-    width: 35px;
+    width: 55px;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -221,18 +222,18 @@ body {
     color: white;
     margin: 0 0 0 3px;
     padding: 0;
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 .tel-div {
   position: absolute;
-  bottom: 100px;
-  left: 132px;
+  bottom: 300px;
+  left: 205px;
 
   max-width: fit-content;
 
   img {
-    width: 35px;
+    width: 55px;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -241,18 +242,18 @@ body {
     color: white;
     margin: 0 0 0 3px;
     padding: 0;
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 .pump-div {
   position: absolute;
-  bottom: 100px;
-  left: 30px;
+  bottom: 300px;
+  left: 280px;
 
   max-width: fit-content;
 
   img {
-    width: 35px;
+    width: 55px;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -261,7 +262,7 @@ body {
     color: white;
     margin: 0 0 0 3px;
     padding: 0;
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 
@@ -271,12 +272,12 @@ body {
 
 .white {
   background: linear-gradient(#e66465, #9198e5);
-  border-radius: 25px;
+  border-radius: 50px;
   position: absolute;
   left: 5%;
   z-index: 10;
-  bottom: 20px;
-  height: 470px;
+  bottom: 17px;
+  height: 765px;
   border: 1px solid black;
   width: 90%;
   opacity: 0;
@@ -306,11 +307,11 @@ body {
 
 .white .tinder-logo {
   position: absolute;
-  top: 190px;
-  width: 60px;
+  top: 255px;
+  width: 100px;
   border-radius: 50px;
   animation: bounce 2s infinite;
-  left: 85px;
+  left: 130px;
 }
 
 @keyframes bounce {
@@ -338,7 +339,7 @@ body {
 
   position: absolute;
   padding: 20px;
-  top: 50px;
+  top: 135px;
 }
 
 .account-form {
@@ -684,3 +685,5 @@ body {
 .chatPanel.closed {
   transform: translateX(100%);
 }
+
+
