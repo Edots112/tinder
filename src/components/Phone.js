@@ -5,12 +5,16 @@ import Welcome from "./Welcome";
 import Form from "./Form";
 import PasscodeScreen from "./PasscodeScreen";
 import CameraOverlay from "./CameraOverlay";
+import DialScreen from "./DialScreen";
+import Browser from "./Browser";
 
 const Phone = () => {
 	const [currentStep, setCurrentStep] = useState("initial");
 	const [fade, setFade] = useState(false);
 	const [isLocked, setIsLocked] = useState(true);
+  const [isCall, setIsCall] = useState(false); 
 	const [isUnlocking, setIsUnlocking] = useState(false);
+  const [isBrowser, setIsBrowser] = useState(false); 
 	const [lockSound] = useState(new Audio(`${process.env.PUBLIC_URL}/sounds/lock.mp3`));
 
 	useEffect(() => {
@@ -76,6 +80,13 @@ const Phone = () => {
 		lockSound.play();
 	};
 
+  const openCall = () => {
+    setIsCall(true); 
+  }
+  const openBrowser = () => {
+    setIsBrowser(true); 
+  }
+
 	return (
 		<div className="center">
 			<img src={`${process.env.PUBLIC_URL}/img/iphone.png`} height="800px" alt="iphone" />
@@ -96,6 +107,13 @@ const Phone = () => {
 				<img src={`${process.env.PUBLIC_URL}/img/pumpfun.png`} alt="pumpfun" className="pumpfun" />
 				<p>Pump.fun</p>
 			</div>
+
+      <div className="call-btn-div">
+        <img onClick={openCall} src={`${process.env.PUBLIC_URL}/img/call-button.png`} alt="call" className="call-btn"></img>
+      </div>
+      <div className="browser-btn-div">
+        <img onClick={openBrowser} src={`${process.env.PUBLIC_URL}/img/safari.jpeg`} alt="browser" className="browser-btn"></img>
+      </div>
 			<div className="white">
 				<div className="close" onClick={handleLock}>
 					<div style={{ position: "relative", left: "5px" }}>&times;</div>
@@ -108,6 +126,8 @@ const Phone = () => {
 				</div>
 			</div>
 			{(isLocked || isUnlocking) && <PasscodeScreen onUnlock={handleUnlock} />}
+      {(isCall) && <DialScreen setIsCall={setIsCall}/>}
+      {(isBrowser) && <Browser setIsBrowser={setIsBrowser}/>}
 		</div>
 	);
 };

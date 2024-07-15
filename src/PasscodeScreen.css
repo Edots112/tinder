@@ -16,6 +16,14 @@
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
+.dial-screen.show {
+  opacity: 1; /* Show the component */
+}
+
+.dial-screen.hide {
+  opacity: 0; /* Hide the component */
+}
+
 .passcode-screen.unlocking {
     opacity: 0;
     transform: scale(1.1);

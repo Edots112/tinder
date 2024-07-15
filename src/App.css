@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+  display: none;
+}
 
 #root {
   text-align: center;
@@ -29,9 +32,9 @@
   align-items: center;
 }
 
-.app{
-	overflow: hidden;
-	min-width: 300px;
+.app {
+  overflow: hidden;
+  min-width: 300px;
 }
 
 .center {
@@ -264,6 +267,22 @@ body {
     padding: 0;
     font-size: 10px;
   }
+}
+
+.call-btn {
+  top: 695px;
+  position: absolute;
+  width: 65px;
+  cursor: pointer;
+  left: 45px;
+}
+.browser-btn {
+  top: 700px;
+  position: absolute;
+  width: 58px;
+  cursor: pointer;
+  left: 130px;
+  border-radius: 12px;
 }
 
 .tinder:hover {
@@ -582,21 +601,21 @@ body {
 }
 
 .slideButton {
-	position: absolute;
-    left: 170px;
-    top: 40px;
-    padding: 10px !important;
-    width: fit-content !important;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 15px;
-    background: linear-gradient(90deg, #ff0303, #ff0085);
-    transition: 200ms;
-    margin: 5px;
-    font-weight: bolder;
-    cursor: pointer;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 170px;
+  top: 40px;
+  padding: 10px !important;
+  width: fit-content !important;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  background: linear-gradient(90deg, #ff0303, #ff0085);
+  transition: 200ms;
+  margin: 5px;
+  font-weight: bolder;
+  cursor: pointer;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
 }
 
 .swipe-icons i:hover {
@@ -686,4 +705,20 @@ body {
   transform: translateX(100%);
 }
 
+.browser {
+  position: absolute;
+  left: 14px;
+  width: 92%;
+  height: 95.3%;
+  border-radius: 20px;
+  z-index: 2;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
 
+.browser.show {
+  opacity: 1; /* Show the component */
+}
+
+.browser.hide {
+  opacity: 0; /* Hide the component */
+}
